@@ -1,0 +1,150 @@
+$primaryColor: #1890ff;
+
+.BubbleChat {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+
+  &-button {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: none;
+    background-color: $primaryColor;
+
+    .anticon {
+      color: white;
+      font-size: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #69c0ff;
+      transition-duration: 250ms;
+      transition-property: background-color;
+    }
+  }
+
+  &-chat {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 64px;
+    right: 0;
+    width: 320px;
+    height: 480px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background-color: $primaryColor;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+
+      &-info {
+        display: flex;
+        align-items: center;
+        color: white;
+        gap: 8px;
+
+        &__avatar {
+          border-radius: 100%;
+        }
+      }
+
+      &-close {
+        color: white;
+      }
+    }
+
+    &__body {
+      flex-grow: 1;
+      padding: 0 16px;
+      display: flex;
+      gap: 4px;
+      flex-direction: column;
+      overflow-y: scroll;
+
+      &-message {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-direction: row;
+
+        &__avatar {
+          width: 28px;
+          height: 28px;
+          border-radius: 100%;
+        }
+
+        &.firstMessage {
+          margin-top: 16px;
+        }
+
+        &.lastMessage {
+          margin-bottom: 16px;
+        }
+
+        .messageLeft,
+        .messageRight {
+          gap: 4px;
+          padding: 8px;
+          max-width: 60%;
+          border-radius: 8px;
+        }
+
+        .messageLeft {
+          background-color: #e6f7ff;
+          color: #141414;
+        }
+
+        .messageRight {
+          margin-left: auto;
+          background-color: $primaryColor;
+          color: white;
+        }
+      }
+    }
+
+    &__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      width: 288px;
+      border-top: 1px solid rgba(0, 0, 0, 0.35);
+
+      &-input {
+        border: none;
+        outline: none;
+        flex-grow: 1;
+        padding-right: 8px;
+      }
+
+      &-send {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .anticon {
+          font-size: 20px;
+          color: #595959;
+        }
+      }
+    }
+  }
+}
+
+.EmojiPickerReact {
+  .epr-preview,
+  .epr-hidden-on-search {
+    display: none !important;
+  }
+}
